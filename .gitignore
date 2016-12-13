@@ -1,0 +1,697 @@
+/ ** ***************************************
+	
+    @author Avanzare
+	@Website www.avanzare.co
+	Güncellemesi 20:26 Salı, Kasım 04, 2014 @Last
+
+	İÇİNDEKİLER
+	---------------------------
+	 1. Preloader + Animasyon
+	 2. Mobil Algılama
+     3. Arka plan
+	 4. Döngü
+	 5. Yerleşimi
+	 6. Ajax Abone
+	 7. Ajax İletişim
+		
+ ** *************************************** /
+ 
+
+/ ** 1. preloader + ANİMASYON
+ ************************************************** *** /
+$ (Pencere) .Load (function () {
+	
+	$ ( '. Soket') addClass ( 'animasyonlu fadeOut.');	
+	
+	//PARALAKS
+	$ ( 'Body'). Paralaks ({
+	  scalarX: 25,
+	  scalarY: 15,
+	  frictionX: 0.1,
+	  frictionY: 0.1,
+	});
+	
+	  setTimeout (function () {
+		  $ ( '# Prelaoder') addClass ( 'animasyon fadeOut') fadeOut (2000)..;	
+	  
+		  setTimeout (function () {
+			  $ ( '# Ev ekran .content-blok img.logo') addClass ( 'animasyonlu fadeInDown.');
+			  
+			  setTimeout (function () {
+				  $ ( '# Ev ekran .content-blok h1') addClass ( 'animasyonlu fadeInUp.');	
+				  
+				  setTimeout (function () {
+					  $ ( '# Ev ekran .content-blok p') addClass ( 'animasyonlu fadeInUp.');
+					  
+					  setTimeout (function () {
+						  $ ( '. Ok-wrap') addClass ( 'animasyonlu fadeInUp.');
+					  
+						  setTimeout (function () {
+							  $ ( '# Tuval-konteyner') addClass ( 'animasyonlu fadeInUp.');  
+		  
+							  setTimeout (function () {
+								  activeOverlays = 1 'dir;
+								  $ ( '# Tuval-konteyner') css ( 'donukluk', '1.');  
+								  $ ( '. Ok-wrap') css ( 'donukluk', '1.');
+								  $ ( '# Ev ekran .content-blok p') css ( 'donukluk', '1.');
+								  $ ( '# Ev ekran .content-blok h1') css ( 'donukluk', '1.');
+								  $ ( '# Ev ekran .content-blok img.logo') css ( 'donukluk', '1.');
+								  
+							  } 1000); 
+						  }, 500);
+					  }, 500); 
+				  }, 500);
+			  }, 500);
+		  } 1000); 
+	  } 1000); 
+  
+});
+
+$ (Document) .ready (function () {
+
+	var activeOverlays = 0;
+	
+	$ ( ". Bindirme-içerik .social-simgeler li a"). Ipucu ({
+		Kap: 'beden',
+		Gecikme: { "show": 100, "gizlemek": 0}
+	});
+	$ ( ". Bindirme-içerik .social-simgeler li a"). (Function () tıklayın {
+		$ (This) .tooltip ( 'gizle')
+	});
+	
+});
+
+/ ** 2. MOBIL TESPİT
+ ************************************************** *** /
+
+(Function (a) {(jQuery.browser = jQuery.browser || {}) = / (android mobil |. Bb \ d + |.) MeeGo + mobil | AvantGo | bada \ / | böğürtlen | android | ipad | senaryo | ipek | blazer | Compal | elaine | fennec | Hiptop | iemobile | ip (bilemek | od) | iris | kindle | lge | Maemo | MIDP | mmp | mobil + firefox |. NetFront | opera m (ob | de) i | hurma (os) |? telefon | s (ixi | re) \ / | plucker | cep | pSP | serisi (4 | 6) 0 | symbian | treo | yukarı \. (tarayıcı | bağlantı) | vodafone | wap | pencereler (ce | telefon) | xda | xiino / i.test (a) || / 1207 | 6310 | 6590 | 3gso | 4thp | 50 [1-6] i | 770S | 802S | bir wa | abac | ac (er | oo | s \ -) ??| ai (ko | rn) | arkadaşları (av | ca | ko) | amoi | bir (ex | ny | yw) | aptu | ar (ch | go) | olarak (te | bize) | attw | au (di | \ -m | r | s) | avan | olmak (ck | ll | udx`) | bi (lb | rd) | bl (AC | az) | br (e | v) w | bumb | bw \ - (n | u) | C55 \ / | capi | ccwa | CDM \ - | hücre | chtm | CLDC | cmd \ - | ko (mp | nd) | craw | da (o | ll | ng) | DBTE'nün | dC \ -s | devi | dica | Dmob | do (c | p) o | ds (12 | \ d) | el (49 | ai) | em (l2 | ul) | er (ic | k0) | esl8 | ez ([4-7] 0 | os | wa | ze) | fetc | (\ - | _) | sinek. g1 u | G560 | gen | gf \ -5 | g \ Mo | \ (go w | od ) | gr (reklam | un) | haie | HCit | hd \ - (m | s | t) | \ hei - | merhaba (pt | ta) | hp (i | ip) | hs \ c | ht (c (\ - | | _ | a | g | p | s | t) | tp) | hu (aw | tc) | i \ - (20 | go | ma) | i230 | iac (| \ - | \ /) | İbro | fikri | ig01 | Ikom | im1k | inno | iPAQ | iris | ja (t | v) | jbro | jemu | jig | KDDI | keji | kgt (| \ /) | klon | kpt | kwc \ - | kyo (c | k) | le (hayır | xi) | lg (g | \ / (k | l | u) | 50 | 54 | \ - [aw]) | libw | vaşak | m1 \ -w | m3ga | M50 \ / | ma (te | ui | xo) | mc (01 | 21 | ca) | m \ CR | bana (rc | ri) | mil (o8 | oa | ts) | mmef | mo (01 | 02 | bi | de | do | t (\ - | | O | v) | zz) | mt (50 | p1 | v) | mwbp | mywa | n10 [0-2] | n20 [2-3] | n30 (0 | 2) | n50 (0 | 2 | 5 ) | n7 (0 (0 | 1) | 10) | ne ((c | m) \ - | tf | | wf | wg | wt) | nok (6 | i) | nzph | o2im | op (ti | wv) | oran | owg1 | P800 | pan (a | d | t) | pdxg | pg (13 | \ - ([1-8] | c)) | phil | pire | pl (ay | uc) | pn \ -2 | po (ck | rt | se) | prox | psio | pt \ -g | qa \ -a | qc (07 | 12 | 21 | 32 | 60 | \ - [2-7] | i \ -) | qtek | R380 | R600 | raks | rim9 | ro (ve | zo) | S55 \ / | sa (ge | ma | mm | ms | ny | va) | sc (01 | h \ - | oo | p \ - ) | sdk \ / | se (c (\ - | 0 | 1) | 47 | mc | nd | ri) | sgh \ - | shar | sie (\ - | m) | sk \ -0 | sl (45 | id) | sm (al | ar | b3 | o | t5) | yüzden (ft | ny) | sp (01 | h \ - | v \ - | v) | sy (01 | mb) | t2 (18 | 50 ) | t6 (00 | 10 | 18) | ta (gt | lk) | tcl \ - | TDG \ - | tel (i | m) | tim \ - | t \ Mo | için (pl | sh) | ts (70 | m \ - | m3 | m5) | tx \ -9 | yukarı (. \ b | g1 | si) | utst | V400 | V750 | veri | vi (rg | te) | vk (40 | 5 [0 -3] | \ -v) | vm40 | voda | vulc | vx (52 | 53 | 60 | 61 | 70 | 80 | 81 | 83 | 85 | 98) | w3C (\ - |) | webc | katiyen | wi (g | nc | nw) | wmlb | Wonu | X700 | yas \ - | senin | ZETO | ZTE \ - / i.test (a.substr (0,4))}) (navigator.userAgent || navigator.vendor || window.opera);	
+
+   
+/ ** 3. GEÇMİŞİ
+ ************************************************** *** /
+$ (Document) .ready (function () {
+	
+	$ ( '# Bg-image'). Backstretch ([
+		"http://i.hizliresim.com/0ln3nZ.jpg"
+	  "http://www.turkhackteam.org/misyon.jpg"
+	  "http://i.hizliresim.com/vX53ZA.png"
+	  "http://i.hizliresim.com/GPRjB3.jpg"
+	  "http://i.hizliresim.com/o03JkR.jpg"
+	  "http://i.hizliresim.com/OVAjDP.jpg"
+	  "http://i.hizliresim.com/njM4bR.jpg"
+	  "http://i.hizliresim.com/R1kjGo.png"	
+	  "http://i.hizliresim.com/njM4N1.jpg"
+	
+	  
+	], {Süresi: 7000, solmaya: 500});
+
+});
+
+$ (Document) .ready (function () {
+
+	// CANVAS 
+	fonksiyon callCanvas (tuval) {
+		
+		// AYARLAR
+		var screenpointSplitt = 10000 
+		var movingSpeed ??= 0.1 
+		
+		var viewportWidth = $ (pencere) .width ();
+		var viewportHeight = $ (pencere) .height ();
+		
+		Ekran Nokta hesaplayın //
+		var nbCalculated = Math.round (viewportHeight * viewportWidth / screenpointSplitt)
+		
+		// CONFIG
+		var _this = Bu,
+		
+			ctx = canvas.getContext ( '2d');
+	
+		_this.config = {
+			
+			yıldız: {
+				Renk: 'RGBA (255, 255, 255, 1)'
+			}
+			
+			hat: {
+				Renk: 'RGBA (255, 255, 255, 1)'
+				En: 0.1
+			}
+			
+			pozisyon: {
+				X: canvas.width * 0.5,
+				Y: canvas.height * 0.5
+			}
+			
+			hız: movingSpeed,
+			uzunluk: nbCalculated,
+			mesafe: 120,
+			yarıçapı: 120,
+			yıldızlar: []
+			
+		};
+		
+		() {Yıldız işlev
+			this.x = Math.random () * canvas.width;
+			this.y = Math.random () * canvas.height;
+	
+			this.vx = (_this.config.velocity - (Math.random () x 0.3));
+			this.vy = (_this.config.velocity - (Math.random () x 0.3));
+	
+			this.radius = Math.random ();
+		}
+	
+		Star.prototype = {
+			oluşturmak: function () {
+				ctx.beginPath ();
+				ctx.arc (this.x this.y, this.radius, 0, Math.PI * 2, false);
+				ctx.fill ();
+			}
+	
+			animasyon: function () {
+				var i;
+				for (i = 0; i <_this.config.length; i ++) {
+	
+					var yıldızı = _this.config.stars [i];
+	
+					Eğer (star.y <0 || star.y> canvas.height) {
+						star.vx = star.vx;
+						star.vy = - star.vy;
+					}
+					else if (star.x <0 || star.x> canvas.width) {
+						star.vx = - star.vx;
+						star.vy = star.vy;
+					}
+					star.x + = star.vx;
+					star.y + = star.vy;
+				}
+			}
+	
+			Satır: function () {
+				var uzunluğu = _this.config.length,
+					Ben yıldız,
+					Jstar,
+					ben,
+					j;
+	
+				for (i = 0; i <uzunluğu; i ++) {
+					(; J <uzunluğu; j ++ j = 0) {için
+						iStar = _this.config.stars [i];
+						Jstar = _this.config.stars [j];
+	
+						Eğer(
+							(IStar.x - jStar.x) <_this.config.distance &&
+							(IStar.y - jStar.y) <_this.config.distance &&
+							(IStar.x - jStar.x)> - _this.config.distance &&
+							(IStar.y - jStar.y)> - _this.config.distance
+						) {
+							Eğer(
+								(IStar.x - _this.config.position.x) <_this.config.radius &&
+								(IStar.y - _this.config.position.y) <_this.config.radius &&
+								(IStar.x - _this.config.position.x)> - _this.config.radius &&
+								(IStar.y - _this.config.position.y)> - _this.config.radius
+							) {
+								ctx.beginPath ();
+								ctx.moveTo (iStar.x, iStar.y);
+								ctx.lineTo (jStar.x, jStar.y);
+								ctx.stroke ();
+								ctx.closePath ();
+							}
+						}
+					}
+				}
+			}
+		};
+	
+		_this.createStars = function () {
+			var uzunluğu = _this.config.length,
+				star,
+				ben;
+	
+			ctx.clearRect (0, 0, canvas.width, canvas.height);
+			for (i = 0; i <uzunluğu; i ++) {
+				_this.config.stars.push (yeni Star ());
+				Yıldız = _this.config.stars [i];
+	
+				star.create ();
+			}
+	
+			star.line ();
+			star.animate ();
+		};
+	
+		= Function _this.setCanvas () {
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		};
+	
+		= Function _this.setContext () {
+			ctx.fillStyle = _this.config.star.color;
+			ctx.strokeStyle = _this.config.line.color;
+			ctx.lineWidth = _this.config.line.width;
+		};
+	
+		_this.loop = function (callback) {
+			geri aramak();
+	
+			reqAnimFrame (function () {
+				_this.loop (function () {
+					geri aramak();
+				});
+			});
+		};
+	
+		_this.bind = function () {
+			$ (Pencere) .sistem ( 'mousemove', function (e) {
+				_this.config.position.x = e.pageX;
+				_this.config.position.y = e.pageY;
+			});
+		};
+	
+		_this.init = function () {
+			_this.setCanvas ();
+			_this.setContext ();
+	
+			_this.loop (function () {
+				_this.createStars ();
+			});
+	
+			_this.bind ();
+		};
+	  
+	  _this return;
+	}
+	
+    // requestAnimationFrame
+
+	var reqAnimFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+		Window.setTimeout (geri arama, / 60 1000);
+	};
+	
+	callCanvas ($ ( 'tuval') [0]) init ().;	
+	
+	// Resize Tuval 
+	var waitForFinalEvent = (function () {
+	  var sayaçlarını = {};
+	  Dönüş fonksiyonu (geri arama, msn, Uniqueıd) {
+		if (! Uniqueıd) {
+		  Uniqueıd = "Bir Uniqueıd olmadan iki kez bu deme";
+		}
+		if (zamanlayıcılar [Uniqueıd]) {
+		  clearTimeout (zamanlayıcılar [Uniqueıd]);
+		}
+		sayaçlarını [Uniqueıd] = setTimeout (geri arama, ms);
+	  };
+	}) ();
+	
+	$ (Pencere) .resize (function () {
+		waitForFinalEvent (function () {
+			callCanvas ($ ( 'tuval') [0]) init ().;	
+
+		}, 400, "bazı benzersiz dize");
+	});
+
+});
+
+$ (Document) .ready (function () {
+	
+	// SET GEÇMİŞİ paralaks
+    . $ ( '# Bg-image') css ( 'dönüşümü' ölçek (1.06) ');
+    $ ( '# Bg-görüntü .backstretch') attr ( 'data-derinlik', 0.1.);
+	$ ( '# Bg-görüntü .backstretch') addClass ( 'katman.');
+	. $ ( '# Wrapper_mbYTP_bgndVideo') css ( ') ölçeği (1.06', 'dönüşümü');
+    $ ( '# Bg-video') attr ( 'data-derinlik', 0.1.);
+	$ ( '# Bg-video') addClass ( 'katman.');
+
+});
+
+/ ** 4. DÖNGÜSÜ
+ ************************************************** *** /
+$ (Document) .ready (function () {
+	
+	$ ( '. Kaymak'). Döngüsü ({
+		fx: 'scrollvert'
+		Zaman aşımı: 7000,
+		Gecikme: 1000,
+		Hız: 500,
+		slaytlar: '.slide'
+	});
+	
+});
+
+
+/ ** 5. OVERLAY
+ ************************************************** *** /
+$ (Document) .ready (function () {
+	
+	
+	// TEMEL FONKSİYONLAR 
+	fonksiyonu hideFrontContent () {
+		$ ( 'Content-blok .container.') FadeOut ( 'slow').;
+	}
+		
+	fonksiyonu showFrontContent () {
+		$ ( 'Content-blok .container.') FadeIn ( 'slow').;
+	}
+	
+	fonksiyonu hideOverlayContent () {
+		$ ( '. .overlay-Konteyner bindirmek') fadeOut ( 'slow').;
+		$ ( '. .overlay-Konteyner bindirmek') removeClass ( 'fadeInUp.');
+		$ ( '. .overlay-Konteyner bindirmek') addClass ( 'fadeOutDown.');
+	}
+		
+	fonksiyonu showOverlayContent () {
+		$ ( '. .overlay-Konteyner bindirmek') fadeIn ( 'slow').;
+		$ ( '. .overlay-Konteyner bindirmek') removeClass ( 'fadeOutDown.');
+		$ ( '. .overlay-Konteyner bindirmek') addClass ( 'fadeInUp.');
+	}
+	
+	fonksiyonu showCloseButton () {
+		$ ( 'Yakın bindirme.') FadeIn ( 'slow').;
+		$ ( 'Yakın bindirme.') RemoveClass ( 'fadeOutUpBig.');
+		$ ( 'Yakın bindirme.') AddClass ( 'fadeInDownBig.');
+	}
+	
+	fonksiyonu hideCloseButton () {
+		$ ( 'Yakın bindirme.') FadeOut ( 'slow').;
+		$ ( 'Yakın bindirme.') RemoveClass ( 'fadeInDownBig.');
+		$ ( 'Yakın bindirme.') AddClass ( 'fadeOutUpBig.');
+	}
+	
+	fonksiyonu showContactCloseButton () {
+		$ ( 'Yakın temas.') FadeIn ( 'slow').;
+		$ ( 'Yakın temas.') RemoveClass ( 'fadeOutUpBig.');
+		$ ( 'Yakın temas.') AddClass ( 'fadeInDownBig.');
+	}
+	
+	fonksiyonu hideContactCloseButton () {
+		$ ( 'Yakın temas.') FadeOut ( 'slow').;
+		$ ( 'Yakın temas.') RemoveClass ( 'fadeInDownBig.');
+		$ ( 'Yakın temas.') AddClass ( 'fadeOutUpBig.');
+	}
+	
+	fonksiyonu showOverlay () {
+		$ ( '. Overlay') removeClass ( 'hideOverlay.');
+		$ ( '. Overlay') addClass ( 'showOverlay.');
+	}
+	
+	fonksiyonu hideOverlay () {
+		$ ( '. Overlay') removeClass ( 'showOverlay.');
+		$ ( '. Overlay') addClass ( 'hideOverlay.');
+	}
+	
+	fonksiyonu showOverlayContact () {
+		$ ( 'Bindirme temas.') RemoveClass ( 'hideOverlay.');
+		$ ( '. Kaplaması temas') addClass ( 'showOverlay.');
+	}
+	
+	fonksiyonu hideOverlayContact () {
+		$ ( 'Bindirme temas.') RemoveClass ( 'showOverlay.');
+		$ ( '. Kaplaması temas') addClass ( 'hideOverlay.');
+	}
+
+	fonksiyonu hideOverlayContactContent () {
+		$ ( 'Bindirme temas .overlay-konteyner.') FadeOut ( 'slow').;
+		$ ( 'Bindirme temas .overlay-konteyner.') RemoveClass ( 'fadeInUp.');
+		$ ( 'Bindirme temas .overlay-konteyner.') AddClass ( 'fadeOutDown.');
+	}
+		
+	fonksiyonu showOverlayContactContent () {
+		$ ( 'Bindirme temas .overlay-konteyner.') FadeIn ( 'slow').;
+		$ ( 'Bindirme temas .overlay-konteyner.') RemoveClass ( 'fadeOutDown.');
+		$ ( 'Bindirme temas .overlay-konteyner.') AddClass ( 'fadeInUp.');
+	}
+	
+	
+   	// Durum VARS
+	var overlayStatus = 0;
+	var overlayContactStatus = 0;
+	var statusforGoTo = 0;
+	
+	
+	// İŞLEVİ BAĞLANMASI OVERLAY
+	fonksiyonu openOverlay () {
+		
+		hideFrontContent ();
+		
+			setTimeout (function () {	
+			showOverlay ();
+			showCloseButton ();
+			
+			  setTimeout (function () {
+				showOverlayContent ();
+				
+				  setTimeout (function () {
+					  overlayStatus = 1 'dir;
+					  statusforGoTo = 1 'dir;
+	
+				  
+				  } 800);
+			  } 400);
+		   } 400);
+		  
+	}
+
+	fonksiyonu closeOverlay () {
+		
+		hideCloseButton ();
+		hideOverlayContent ();
+		
+		  setTimeout (function () {	 
+			hideOverlay ();
+			  
+			  setTimeout (function () {
+				  showFrontContent ();
+				  
+				  setTimeout (function () {
+					  activeOverlays = 1 'dir;
+					  statusforGoTo = 0;
+	
+				  
+				  } 1000);
+			  } 400);
+		  } 600);
+		  
+	}
+	
+	// İŞLEVİ BAĞLANMASI OVERLAY İLETİŞİM
+	fonksiyonu openOverlayContact () {
+		
+		hideCloseButton ();
+		hideOverlayContent ();
+		
+			setTimeout (function () {
+			showOverlayContact ();
+			showContactCloseButton ();
+			
+				setTimeout (function () {
+					showOverlayContactContent ();
+						  
+					setTimeout (function () {
+						overlayContactStatus = 1 'dir;
+	  
+					} 1000);
+				} 400);
+			}, 200);
+		  
+	}
+	
+	fonksiyonu closeOverlayContact () {
+		
+		hideContactCloseButton ();
+		hideOverlayContactContent ();
+		showCloseButton ();	
+			setTimeout (function () {	 
+				hideOverlayContact ();
+				showOverlayContent ();
+								  
+				  setTimeout (function () {
+					  overlayStatus = 1 'dir;
+					  statusforGoTo = 1 'dir;
+	
+				  
+				  } 1000); 	
+			  } 400);		
+		  
+	}
+	
+	
+	
+	
+	// ÇAĞRI FONKSİYONLARI OVERLAY
+	$ ( '. Açık bindirme'). () {(Fonksiyonu tıklayın
+		
+		openOverlay ();
+		  			  
+	});	
+	
+	
+	$ ( '. Yakın bindirme'). ((Tıklayın fonksiyonu) {
+		
+		closeOverlay ();
+		  				  
+	});
+	
+
+	$ ( '. Overlay'). Bind ( 'mousewheel', function (e) {
+		if (e.originalEvent.wheelDelta / -120> 0) {
+			// Alert ( 'aşağı');
+		} Else {
+			
+				procesfinshedOverlay1 ();
+				fonksiyonu procesfinshedOverlay1 () {
+				  Eğer (overlayStatus == 1) {
+					  closeOverlay ();
+					  overlayStatus = 0;
+					  statusforGoTo = 0;
+					  
+				  } Else {}
+				}
+		  	
+		}
+
+	});
+
+
+	$ ( '# Ön sayfa'). () { 'Mousewheel', function (e bağlamak
+		if (e.originalEvent.wheelDelta / 120> 0) {
+			// Alert ( 'up');
+		} Else {
+			
+		    ) (Preloadprocessfinshed;
+			fonksiyonu preloadprocessfinshed () {
+			  Eğer (activeOverlays == 1) {
+				  openOverlay ();
+				  activeOverlays = 0;
+				  
+			  } Else {}
+			}
+		  	
+		}
+
+	});
+	
+	
+	
+	// ÇAĞRI FONKSİYONU KAPLAMA İLETİŞİM
+	$ ( '. Açık kontak'). () {(Fonksiyonu tıklayın
+		
+		 openOverlayContact ();
+		  				  
+	});
+	
+	$ ( '. Yakın temas'). ((Tıklayın fonksiyonu) {
+		
+		closeOverlayContact ();
+		  				  
+	});
+	
+	
+	$ ( '. Overlay'). Bind ( 'mousewheel', function (e) {
+		if (e.originalEvent.wheelDelta / 120> 0) {
+			// Alert ( 'up');
+		} Else {
+			
+			processfinshedGoTo ();
+			fonksiyonu processfinshedGoTo () {
+			  Eğer (statusforGoTo == 1) {
+				  openOverlayContact ();
+				  statusforGoTo = 0;
+				  overlayStatus = 0;
+				  
+			  } Else {}
+			}
+		  	
+		}
+
+	});
+	
+	$ ( '. Kaplaması temas'). Bind ( 'mousewheel', function (e) {
+		if (e.originalEvent.wheelDelta / -120> 0) {
+			// Alert ( 'aşağı');
+		} Else {
+			
+		  	procesfinshedOverlayContact1 ();
+			{() Işlev procesfinshedOverlayContact1
+			  Eğer (overlayContactStatus == 1) {
+				  closeOverlayContact ();
+				  overlayContactStatus = 0;
+				  
+			  } Else {}
+			}
+			
+		}
+
+	});
+
+	
+});
+
+/ ** 6. AJAX ABONE
+ ************************************************** *** /
+$ (Document) .ready (function () {
+	
+	$ ( '. Abone formunu'). (Işlevini göndermek () {
+		  var postdata = $ ( 'formunu abone.') (serialize.);
+		  $ .ajax ({
+			  yazın: 'POST',
+			  url: 'varlık / subscribe.php'
+			  veriler: PostData
+			  dataType: 'json',
+			  başarı: function (json) {
+				  if (json.valid == 0) {
+					  ( '. Durum-mesajı'). Html $ (json.error);
+					  $ ( '. Durum-ileti') fadeIn ( 'slow').;
+					  $ ( '. Durum-ileti') css ( 'margin-top', '5px.');
+				  }
+				  else {
+					  $ ( "Input, textarea") val ( '.');
+					  $ ( '. Abone formunu düğmesi') ( 'özürlü' true) prop.;
+					  ( '. Durum-mesajı'). Html $ (json.message);
+					  $ ( '. Durum-ileti') fadeIn ( 'slow').;
+					  $ ( '. Durum-ileti') css ( 'margin-top', '5px.');
+				  }
+			  }
+			});
+			return false;
+		});
+		
+});
+
+
+/ ** 7. AJAX İLETİŞİM
+ ************************************************** *** /
+$ (Document) .ready (function () {
+	
+	$ ( '. Iletişim formu form'). () {(Fonksiyonu göndermek
+	
+			$ ( 'Iletişim formu formu .nameLabel.') Html ( 'adı.');
+			$ ( 'Iletişim formu formu .emailLabel.') Html ( 'E-posta.');
+			$ ( 'Iletişim formu formu .messageLabel.') Html ( 'Mesaj'.);
+	
+			var postdata = $ ( 'iletişim formu formu.') (serialize.);
+			$ .ajax ({
+				yazın: 'POST',
+				url: 'varlık / sendmail.php'
+				veriler: PostData
+				dataType: 'json',
+				başarı: function (json) {
+					if (json.nameMessage! = '') {
+						. $ ( '. Iletişim formu formu .nameLabel') ( '- <span class = "durumu">' + json.nameMessage + '</ span>') ekleyin;
+					}
+					if (json.emailMessage! = '') {
+						. $ ( '. Iletişim formu formu .emailLabel') ( '- <span class = "durumu">' + json.emailMessage + '</ span>') ekleyin;
+					}
+					if (json.messageMessage! = '') {
+						. $ ( '. Iletişim formu formu .messageLabel') ( '- <span class = "durumu">' + json.messageMessage + '</ span>') ekleyin;
+					}
+					Eğer ( '&& json.messageMessage == json.nameMessage ==' '== && json.emailMessage' '') {
+							.. $ ( '. Iletişim formu .status-ileti temas') addClass ( 'animasyonlu fadeIn') html ( 'postanız başarıyla gönderildi.');
+							$ ( 'Input [type = "text"], textarea') val ( '.');
+					}
+				}
+			});
+			return false;
+		});	
+			
+});
